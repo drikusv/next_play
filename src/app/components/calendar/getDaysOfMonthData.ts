@@ -6,7 +6,6 @@ export function getDaysOfMonthData(
   month?: "next" | "previous"
 ) {
   let currentMonth = DateTime.fromJSDate(current);
-  console.log(events);
   if (month === "next") {
     currentMonth = currentMonth.plus({ month: 1 });
   } else if (month === "previous") {

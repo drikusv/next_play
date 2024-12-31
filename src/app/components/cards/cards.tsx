@@ -13,23 +13,25 @@ export default function Cards({
 }) {
   let data: JSX.Element = (
     <div
-      className={`w-full h-full border border-b-slate-400 rounded-md ${
+      className={`w-full h-24 border border-b-slate-400 rounded-md ${
         !event
           ? dayOfWeek === 0 || dayOfWeek === 6
-            ? "bg-red-400"
-            : "bg-blue-500"
-          : "bg-green-500"
+            ? "bg-gray-500"
+            : "bg-white"
+          : "bg-blue-200"
       }`}
     >
-      <div className="flex justify-center items-center flex-col">
+      <div className="flex justify-center items-start flex-col">
         <div className="w-full h-5 flex justify-center items-center pt-3">
           {value}
         </div>
-        {eventList.map((e) => (
-          <div key={e} className="w-full h-5 pl-3">
-            {e}
-          </div>
-        ))}
+        <div className="w-full max-h-16 overflow-y-auto">
+          {eventList.map((e, i) => (
+            <div key={i} className="pl-3">
+              {e}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

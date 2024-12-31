@@ -4,7 +4,7 @@ import Cards from "../cards/cards";
 import "./calendar.css";
 import { getDaysOfMonthData } from "./getDaysOfMonthData";
 
-export default function Calendar() {
+const Calendar = () => {
   const days = [
     "Sunday",
     "Monday",
@@ -64,8 +64,8 @@ export default function Calendar() {
   };
 
   return (
-    <div className="calendar p-4 rounded-md">
-      <div className="bg-blue-500 rounded-md cal-header border-2 border-gray-400 flex items-center justify-center flex-col">
+    <div className="calendar p-4 rounded-md bg-neutral-300 text-black">
+      <div className="bg-slate-500 rounded-md cal-header border-2 border-gray-400 flex items-center justify-center flex-col">
         <span> {currentMonths.title}</span>
         <div className="flex flex-row w-full">
           <div className="w-full pl-4">
@@ -118,7 +118,7 @@ export default function Calendar() {
           return (
             <div
               key={index}
-              className="w-full flex items-center justify-center text-white"
+              className="w-full flex items-center justify-center text-slate-600"
             >
               {value}
             </div>
@@ -146,4 +146,6 @@ export default function Calendar() {
       </div>
     </div>
   );
-}
+};
+
+export default Calendar;
